@@ -5,72 +5,80 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/styles.css">
   <title>El Blog de Hector</title>
 </head>
 
 <body>
   <header>
-    <p>Setup</p>
-    <nav>
-      <ol>
-        <li>
-          <a href="#google-chrome">
-            Google Chrome
+    <details>
+      <summary>
+        Setup
+      </summary>
+      <nav>
+        <ol>
+          <li>
+            <a href="#google-chrome">
+              Google Chrome
+            </a>
+          </li>
+          <li>
+            <a href="#visual-studio">
+              Visual Studio
+            </a>
+          </li>
+          <li>
+            <a href="#figma">
+              Figma
+            </a>
+          </li>
+          <li>
+            <a href="#github">
+              GitHub
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </details>
+    <details>
+      <summary>
+        Conceptos esenciales del Desarrollo Web
+      </summary>
+      <nav>
+        <ol>
+          <li>
+            <a href="#html">
+              Qué es HTML
+            </a>
+          </li>
+          <li>
+            <a href="#etiquetas">
+              Etiquetas
+          </li>
           </a>
-        </li>
-        <li>
-          <a href="#visual-studio">
-            Visual Studio
-          </a>
-        </li>
-        <li>
-          <a href="#figma">
-            Figma
-          </a>
-        </li>
-        <li>
-          <a href="#github">
-            GitHub
-          </a>
-        </li>
-      </ol>
-    </nav>
-
-    <p>Conceptos esenciales del Desarrollo Web</p>
-    <nav>
-      <ol>
-        <li>
-          <a href="#html">
-            Qué es HTML
-          </a>
-        </li>
-        <li>
-          <a href="#etiquetas">
-            Etiquetas
-        </li>
-        </a>
-        <li>
-          <a href="#dom">
-            DOM
-          </a>
-        </li>
-        <li>
-          <a href="#semantica">
-            Semántica
-          </a>
-        </li>
-        <li>
-          <a href="#atributos">
-            Atributos
-          </a>
-        </li>
-        <li>
-          <a href="#css">
-            Qué es CSS
-          </a>
-        </li>
-      </ol>
-    </nav>
+          <li>
+            <a href="#dom">
+              DOM
+            </a>
+          </li>
+          <li>
+            <a href="#semantica">
+              Semántica
+            </a>
+          </li>
+          <li>
+            <a href="#atributos">
+              Atributos
+            </a>
+          </li>
+          <li>
+            <a href="#css">
+              Qué es CSS
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </details>
   </header>
 
 
@@ -122,9 +130,24 @@
   <h3 id="html">Qué es HTML</h3>
 
   <p>Hyper Text Markup Language o Lenguaje de marcas Hipertexto. Es el componente más básico de la web. Define el
-    significado y la estructura del contenido.</p>
+    significado y la estructura del contenido.
+    <code>html</code>
 
-  <img src="./img/html.png" alt="estructura HTML" title="estructura HTML">
+  <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </p>
 
   <h3 id="etiquetas">Etiquetas</h3>
   <p>Las etiquetas HTML van a ayudarnos a brindar una estructura y semántica al contenido de nuestro website y cada una
@@ -217,6 +240,20 @@
     Si tienes alguna pregunta, escribeme a:
     <a href="mailto:hhmudarra@gmail.com"> hhmudarra@gmail.com</a>
   </p>
+
+  <!-- Function to expand initial menu -->
+  <script>
+    const $detailsList = document.querySelectorAll('details');
+    $detailsList.forEach(($details) => {
+      $details.querySelector('summary').addEventListener('click', expand);
+    });
+
+    function expand() {
+      $detailsList.forEach(($details) => {
+        $details.removeAttribute('open');
+      })
+    }
+  </script>
 </body>
 
 </html>
